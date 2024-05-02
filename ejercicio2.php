@@ -7,7 +7,14 @@
 
 // Aquí tu código
 
-
+function perimetroTriangulo($lado1, $lado2, $lado3){
+    if ($lado1 + $lado2 > $lado3 AND $lado1 + $lado3 > $lado2  AND $lado3 + $lado2 > $lado1){
+        return $lado1 + $lado2 + $lado3;
+    }else{
+        return -1;
+    }
+    
+}
 
 // TESTS
 assert(perimetroTriangulo(1, 1, 1) == 3);

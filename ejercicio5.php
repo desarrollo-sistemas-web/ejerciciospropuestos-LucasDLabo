@@ -9,7 +9,14 @@
 
 // Aquí tu código
 
-
+function slug($cadena){
+    $cadena = strtolower($cadena);
+    if ($cadena != NULL AND $cadena != " "){
+        return str_replace(" ", "-", $cadena);
+    }else{
+        return  "error";
+    }
+}
 
 
 // TESTS

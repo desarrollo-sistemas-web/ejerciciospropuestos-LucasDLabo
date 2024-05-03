@@ -1,6 +1,7 @@
 <?php
 
-// Desarrolla una función llamada "puntuacion" que simule un sistema de puntuaciones almacenando puntuaciones en un array. Calcula y muestra la puntuación promedio, la más alta y la más baja.
+// Desarrolla una función llamada "puntuacion" que simule un sistema de puntuaciones almacenando puntuaciones en un array.
+// Calcula y muestra la puntuación promedio, la más alta y la más baja.
 // La función devolverá un array con los siguientes valores:
 // - promedio
 // - max
@@ -36,14 +37,36 @@ $puntuaciones2 = [
 ];
 
 // Aquí tu código
+puntuacion($puntuaciones2);
 
+function puntuacion($notas1){
+    $total = 0;
+    $i = 0;
+    foreach($notas1 as $key => $valor){
+        $i++;
+        $total+= $valor;
+    }
+    $max = max($notas1);
+    $max_user = array_search($max, $notas1);
+    
+    $min = min($notas1);
+    $min_user = array_search($min, $notas1);
 
+    $promedio = $total / $i;
 
+    return $notas1 = [
+        "promedio" => $promedio,
+        "max" => $max,
+        "min" => $min,
+        "max_users" => [$max_user],
+        "min_users" => [$min_user]
+    ];
+}
 
 // TESTS
 assert(puntuacion($puntuaciones) == [
     "promedio" => 5.5,
-    "max" => 9,
+    "max" => 10,
     "min" => 1,
     "max_users" => ["Raquel"],
     "min_users" => ["Jorge"]

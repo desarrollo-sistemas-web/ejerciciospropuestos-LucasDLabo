@@ -7,8 +7,28 @@
 
 
 // Aquí tu código
+function noAcentos ($txt){
+    $acentos = ["á","é","í","ó","ú"];
+    $acentosNO = ["a","e","i","o","u"];
+    return str_replace($acentos, $acentosNO,$txt);
+}
 
+function palindromo ($texto){
+    $texto = strtolower($texto);
+    $texto = str_replace(" ", "",$texto);
 
+    $caracteres = strlen($texto);
+    $texto = noAcentos($texto);
+    $invertido = strrev($texto);
+    if ($caracteres % 2 != 0 ){
+        if ($texto == $invertido){
+            return true;
+        }
+    }else{
+        return false;
+    }
+    
+}
 
 // TESTS
 assert(palindromo("Anita lava la tina") == true);

@@ -5,21 +5,22 @@
 // Un número primo es un número que solo es divisible por 1 y por sí mismo.
 
 // Aquí tu código
-    
+    primos();
     function primos(){
-        for ($i = 1; $i <= 100; $i++){
-            if ($i > 1){
-                if ($i == 2 or $i % 2 != 0){
-                    if ($i == 3 or $i % 3 != 0){
-                        if ($i == 5 or $i % 5 != 0){
-                            if ($i == 7 or $i % 7 != 0){
-                                $primos[] = $i;
-                            } 
-                        } 
+        $primos = [];
+        static $indice = 0;
+        for ($numeros = 1; $numeros <= 100; $numeros++){
+            $probabilidadPrimo = 0;
+            if ($numeros > 1){
+                for ($mult = 1; $mult <=100; $mult++){
+                    if ($numeros % $mult == 0){
+                        $probabilidadPrimo += 1;
                     }
                 }
+                if ($probabilidadPrimo == 2){
+                    $primos[] = $numeros;
+                }
             }
-            
         }
         return $primos;
     }

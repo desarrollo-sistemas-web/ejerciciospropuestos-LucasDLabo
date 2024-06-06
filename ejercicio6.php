@@ -8,16 +8,16 @@
     primos();
     function primos(){
         $primos = [];
-        static $indice = 0;
         for ($numeros = 1; $numeros <= 100; $numeros++){
             $probabilidadPrimo = 0;
             if ($numeros > 1){
-                for ($mult = 1; $mult <=100; $mult++){
+                for ($mult = 1; $mult <=$numeros; $mult++){
                     if ($numeros % $mult == 0){
                         $probabilidadPrimo += 1;
                     }
                 }
                 if ($probabilidadPrimo == 2){
+                    //echo "El número $numeros es primo<br>";
                     $primos[] = $numeros;
                 }
             }

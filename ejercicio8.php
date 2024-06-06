@@ -14,16 +14,19 @@ function noAcentos ($txt){
 }
 
 function palindromo ($texto){
-    $texto = strtolower($texto);
     $texto = str_replace(" ", "",$texto);
-
     $caracteres = strlen($texto);
-    $texto = noAcentos($texto);
-    $invertido = strrev($texto);
+
     if ($caracteres % 2 != 0 ){
+
+        $texto = strtolower($texto);
+        $texto = noAcentos($texto);
+        $invertido = strrev($texto);
+
         if ($texto == $invertido){
             return true;
         }
+        
     }else{
         return false;
     }

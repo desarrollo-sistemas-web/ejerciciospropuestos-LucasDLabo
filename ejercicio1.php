@@ -4,7 +4,9 @@
 
 // Aquí tu código
 
-
+function areaTriangulo ($base, $altura){
+    return ($base * $altura) / 2;
+}
 
 // TESTS
 assert(areaTriangulo(1, 1) == 0.5);
